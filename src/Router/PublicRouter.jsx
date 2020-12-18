@@ -6,12 +6,15 @@ import Login from "../components/Account/Login";
 import ForgotPassword from "../components/Account/ForgotPassword";
 import ResetPassword from "../components/Account/ResetPassword";
 import LandingPage from "../components/common/LandingPage";
+import ConsultationForm from "../components/Patient/ConsultationForm";
+
 import Footer from "../components/common/Footer";
 const routes = {
     "/home": () => <LandingPage />,
     "/login": () => <Login />,
     "/forgot-password": () => <ForgotPassword />,
     "/reset-password/:token": ({ token }) => <ResetPassword token={token} />,
+    "/patient/:id/consultation": ({ id }) => <ConsultationForm id={id} />,
 };
 
 const PublicRouter = () => {

@@ -5,7 +5,7 @@ import { FullLoading } from "./components/common/Loader";
 import { getCurrentUser } from "./Redux/actions";
 import FacultyRouter from "./Router/FacultyRouter";
 import PublicRouter from "./Router/PublicRouter";
-import StudentRouter from "./Router/StudentRouter";
+import PatientRouter from "./Router/PatientRouter";
 import AdminRouter from "./Router/AdminRouter";
 import { useAbortableEffect } from "./util/useAbortableEffect";
 import HODRouter from "./Router/HODRouter";
@@ -47,9 +47,8 @@ function App() {
             currentUser.data.data.type === USER_TYPES.FACULTY_ADVISOR.type
         ) {
             return <FacultyRouter />;
-        }
-        else if (currentUser.data.data.type === USER_TYPES.STUDENT.type) {
-            return <StudentRouter />;
+        } else if (currentUser.data.data.type === USER_TYPES.STUDENT.type) {
+            return <PatientRouter />;
         } else if (currentUser.data.data.type === USER_TYPES.ADMIN.type) {
             return <AdminRouter />;
         } else {
