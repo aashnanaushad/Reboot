@@ -1,22 +1,15 @@
 import React from "react";
 import { useRoutes, useRedirect } from "hookrouter";
-import FacilityProfile from "../components/DistrictAdmin/DistrictAdminProfile";
-import CreateFacility from "../components/DistrictAdmin/CreateFacility.js";
+import PoliceProfile from "../components/Police/PoliceProfile";
 import NavBar from "../components/Navbars/NavBar";
 
 const routes = {
-    "/profile": () => <FacilityProfile />,
-    "/createfacility": () => <CreateFacility />
+    "/profile": () => <PoliceProfile />
 };
 const links = [
     {
         link: "/profile",
         title: "Profile",
-        icon: "",
-    },
-    {
-        link: "/createfacility",
-        title: "Create Facility",
         icon: "",
     },
 ];

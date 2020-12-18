@@ -5,10 +5,13 @@ import { FullLoading } from "./components/common/Loader";
 import { getCurrentUser } from "./Redux/actions";
 import DistrictAdminRouter from "./Router/DistrictAdminRouter";
 import PublicRouter from "./Router/PublicRouter";
+import StateAdminRouter from "./Router/StateAdminRouter";
+import HealthOfficialRouter from "./Router/HealthOfficialRouter"
+import PanchayathAdminRouter from "./Router/PanchayathAdminRouter"
 import PatientRouter from "./Router/PatientRouter";
 import AdminRouter from "./Router/AdminRouter";
 import { useAbortableEffect } from "./util/useAbortableEffect";
-import HODRouter from "./Router/HODRouter";
+import PoliceRouter from "./Router/PoliceRouter";
 import "./animate.css";
 
 function App() {
@@ -41,12 +44,19 @@ function App() {
 
     if (currentUser && currentUser.data) {
         // console.log("user:", currentUser.data.data.type);
-        if (currentUser.data.data.type === USER_TYPES.HOD.type) {
-            return <HODRouter />;
+        if (currentUser.data.data.type === USER_TYPES.POLICE.type) {
+            return <PoliceRouter />;
         } else if (
-            currentUser.data.data.type === USER_TYPES.FACULTY_ADVISOR.type
+            currentUser.data.data.type === USER_TYPES.DISTRICT_ADMIN.type
         ) {
             return <DistrictAdminRouter />;
+        }
+        else if (currentUser.data.data.type === USER_TYPES.HEALTH_OFFICIAL.type) {
+            return <HealthOfficialRouter />;
+        } else if (currentUser.data.data.type === USER_TYPES.STATE_ADMIN.type) {
+            return <StateAdminRouter />;
+        } else if (currentUser.data.data.type === USER_TYPES.PUNCHAYATH_ADMIN.type) {
+            return <PanchayathAdminRouter />;
         } else if (currentUser.data.data.type === USER_TYPES.STUDENT.type) {
             return <PatientRouter />;
         } else if (currentUser.data.data.type === USER_TYPES.ADMIN.type) {

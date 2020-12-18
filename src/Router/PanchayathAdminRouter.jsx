@@ -1,32 +1,22 @@
 import React from "react";
 import { useRoutes, useRedirect } from "hookrouter";
+import PanchayathAdminProfile from "../components/PanchayathAdmin/PanchayathAdminProfile";
 import NavBar from "../components/Navbars/NavBar";
-import AdminProfile from "../components/Admin/AdminProfile";
 
 const routes = {
-    "/profile": () => <AdminProfile />,
+    "/profile": () => <PanchayathAdminProfile />,
 };
 const links = [
-    {
-        link: "/requests",
-        title: "Requests",
-        icon: "",
-    },
-    {
-        link: "/holidays",
-        title: "Holidays",
-        icon: "",
-    },
     {
         link: "/profile",
         title: "Profile",
         icon: "",
-    },
+    }
 ];
-const AdminRouter = () => {
-    useRedirect("/home", "/requests");
-    useRedirect("/login", "/requests");
-    useRedirect("/", "/requests");
+const PanchayathAdminRouter = () => {
+    useRedirect("/login", "/profile");
+    useRedirect("/", "/profile");
+    useRedirect("/home", "/profile");
     const pages = useRoutes(routes);
 
     return (
@@ -36,8 +26,9 @@ const AdminRouter = () => {
             ) : (
                     <NavBar pages={pages} menus={links} />
                 )}
+
         </div>
     );
 };
 
-export default AdminRouter;
+export default PanchayathAdminRouter;

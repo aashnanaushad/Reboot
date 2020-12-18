@@ -13,9 +13,8 @@ export default function Login() {
     const [queryParams, setQueryParams] = useQueryParams();
 
     const initForm = {
-        userId: "",
+        userName: "",
         password: "",
-        type: "student/loginStudent",
     };
     const [form, setForm] = useState(initForm);
 
@@ -37,7 +36,7 @@ export default function Login() {
     function validateInputs() {
         let err = "";
         let formValid = true;
-        if (form.userId === "" || form.password === "") {
+        if (form.userName === "" || form.password === "") {
             err = "Admission no. / Password is empty";
             formValid = false;
         }
@@ -72,7 +71,7 @@ export default function Login() {
                         }
                         window.location.reload();
                     } else {
-                        setFormError("Check your userId and password");
+                        setFormError("Check your username and password");
                         setFormLoading(false);
                     }
                 })
@@ -98,19 +97,18 @@ export default function Login() {
                     <div className="mb-4">
                         <label
                             className="block text-gray-700 text-sm font-bold mb-2"
-                            htmlFor="userId">
+                            htmlFor="userName">
                             User Name
                         </label>
                         <input
                             ref={myInput}
                             aria-label="Admission No."
-                            name="userId"
+                            name="userName"
                             type="text"
-                            value={form.userId}
+                            value={form.userName}
                             onChange={handleChange}
-                            className={`appearance-none border ${
-                                formError ? "border-red-500" : ""
-                            } rounded w-full py-2 px-3 text-gray-700 bg-gray-200 leading-tight focus:outline-none focus:shadow-outline`}
+                            className={`appearance-none border ${formError ? "border-red-500" : ""
+                                } rounded w-full py-2 px-3 text-gray-700 bg-gray-200 leading-tight focus:outline-none focus:shadow-outline`}
                             placeholder="Admission No."
                         />
                     </div>
@@ -126,9 +124,8 @@ export default function Login() {
                             type="password"
                             value={form.password}
                             onChange={handleChange}
-                            className={`appearance-none border ${
-                                formError ? "border-red-500" : ""
-                            } rounded w-full py-2 px-3 text-gray-700 bg-gray-200 leading-tight focus:outline-none focus:shadow-outline`}
+                            className={`appearance-none border ${formError ? "border-red-500" : ""
+                                } rounded w-full py-2 px-3 text-gray-700 bg-gray-200 leading-tight focus:outline-none focus:shadow-outline`}
                             placeholder="******************"
                         />
                     </div>
@@ -141,17 +138,15 @@ export default function Login() {
                     <div className="flex items-center justify-between">
                         <button
                             type="submit"
-                            className={`flex items-center ${
-                                formLoading
-                                    ? "bg-gray-600"
-                                    : "bg-red-700 hover:bg-red-800"
-                            } text-white font-bold py-2 px-4 sm:px-3 rounded focus:outline-none focus:shadow-outline`}>
+                            className={`flex items-center ${formLoading
+                                ? "bg-gray-600"
+                                : "bg-red-700 hover:bg-red-800"
+                                } text-white font-bold py-2 px-4 sm:px-3 rounded focus:outline-none focus:shadow-outline`}>
                             <svg
-                                className={`h-5 w-5 ${
-                                    formLoading
-                                        ? "text-gray-400"
-                                        : "text-red-600"
-                                } transition ease-in-out duration-150 mr-1`}
+                                className={`h-5 w-5 ${formLoading
+                                    ? "text-gray-400"
+                                    : "text-red-600"
+                                    } transition ease-in-out duration-150 mr-1`}
                                 fill="currentColor"
                                 viewBox="0 0 20 20">
                                 <path

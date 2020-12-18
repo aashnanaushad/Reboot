@@ -11,13 +11,13 @@ export default {
     },
 
     login: {
-        path: "/api/v1",
+        path: "/api/v1/user/login",
         method: "POST",
         noAuth: true,
     },
 
     currentUser: {
-        path: "/api/v1/auth/user",
+        path: "/api/v1/user/getUser",
         method: "GET",
         noAuth: false,
     },
