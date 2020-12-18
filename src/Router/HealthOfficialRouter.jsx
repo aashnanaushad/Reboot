@@ -1,12 +1,10 @@
 import React from "react";
 import { useRoutes, useRedirect } from "hookrouter";
-import FacilityProfile from "../components/DistrictAdmin/DistrictAdminProfile";
-import CreateFacility from "../components/DistrictAdmin/CreateFacility.js";
+import HealthOfficialProfile from "../components/HealthOfficial/HealthOfficialProfile";
 import NavBar from "../components/Navbars/NavBar";
 
 const routes = {
-    "/profile": () => <FacilityProfile />,
-    "/createfacility": () => <CreateFacility />
+    "/profile": () => <HealthOfficialProfile />
 };
 const links = [
     {
@@ -14,13 +12,8 @@ const links = [
         title: "Profile",
         icon: "",
     },
-    {
-        link: "/createfacility",
-        title: "Create Facility",
-        icon: "",
-    },
 ];
-const DistrictAdminRouter = () => {
+const HealthOfficialRouter = () => {
     useRedirect("/login", "/profile");
     useRedirect("/", "/profile");
     useRedirect("/home", "/profile");
@@ -38,4 +31,4 @@ const DistrictAdminRouter = () => {
     );
 };
 
-export default DistrictAdminRouter;
+export default HealthOfficialRouter;

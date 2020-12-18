@@ -1,11 +1,11 @@
 import React from "react";
 
-const AdminProfile = () => {
+const PanchayathAdminProfile = () => {
     return (
         <div className="flex  w-full max-w-4xl mx-auto px-1 fadeIn">
-            hi state admin
+            hi panchayath admin
         </div>
     );
 };
 
-export default AdminProfile;
+export default PanchayathAdminProfile;
