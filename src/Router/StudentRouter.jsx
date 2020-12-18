@@ -17,12 +17,12 @@ const routes = {
 const links = [
     {
         link: "/leaveform",
-        title: "Apply Leave",
+        title: "Facility",
         icon: "",
     },
     {
         link: "/requests",
-        title: "Applied Leaves",
+        title: "Laboratary",
         icon: "",
     },
     {

@@ -15,18 +15,11 @@ function LandingPage() {
         <div className=" mt-4 sm:mt-24 pl-6 md:pl-12 lg-pl-24 pr-6 mx-auto flex flex-wrap">
             <div className="flex flex-wrap w-full md:w-2/3">
                 <h1 className="  w-full my-4 text-3xl md:text-5xl text-red-700 font-bold leading-tight text-center md:text-left slide-in-bottom-h1">
-                    HOSTEL APP
+                    Pandemic Handler
                 </h1>
                 <div className="flex ">
                     <p className="w-full leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">
-                        A web application developed by{" "}
-                        <a
-                            className="text-red-600"
-                            href="http://mgmits.ac.in/departments/computer-science-and-engineering/">
-                            MITS CSE
-                        </a>{" "}
-                        for automating the leave application process for
-                        hosteliers.
+                        An end to end Pandemic handling system
                     </p>
                 </div>
             </div>
@@ -37,41 +30,10 @@ function LandingPage() {
                         <button
                             onClick={() => navigate("/login")}
                             className="mx-auto md:mr-0 my-2 text-white px-8 w-full max-w-sm  h-12 bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none ">
-                            <span> &gt; Student Login</span>
+                            <span> &gt; Authorized Login</span>
                         </button>
                     </div>
                     <br />
-                    <div className="flex w-full">
-                        <button
-                            onClick={() => navigate("/login")}
-                            className="mx-auto md:mr-0 my-2 text-white px-4 w-full max-w-sm h-12 bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none ">
-                            <span> &gt; Faculty Login</span>
-                        </button>
-                    </div>
-                    <br />
-                    <div className="flex w-full">
-                        <button
-                            onClick={() => navigate("/login")}
-                            className="mx-auto md:mr-0 my-2 text-white px-4 w-full max-w-sm h-12 bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none ">
-                            <span> &gt; HOD Login</span>
-                        </button>
-                    </div>
-                    <br />
-                    <div className="flex w-full">
-                        <button
-                            onClick={() => navigate("/login")}
-                            className="mx-auto md:mr-0 my-2 text-white px-4 w-full max-w-sm h-12 bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none ">
-                            <span> &gt; Warden Login</span>
-                        </button>
-                    </div>
-                    <br />
-                    <div className="flex w-full">
-                        <button
-                            onClick={() => navigate("/login")}
-                            className="mx-auto md:mr-0 my-2 text-white px-4 w-full max-w-sm h-12 bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none ">
-                            <span> &gt; Administrator Login</span>
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>

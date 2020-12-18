@@ -1,8 +1,6 @@
 import { navigate, usePath } from "hookrouter";
 import React, { useEffect, useState } from "react";
 // import Footer from "../common/Footer";
-import img from "./logo/mitslogo.png";
-import logoBlack from "./logo/logo512.png";
 
 const NavBar = ({ menus, pages }) => {
     const path = usePath();
@@ -68,15 +66,7 @@ const NavBar = ({ menus, pages }) => {
                                     </svg>
                                 </button>
                             </div>
-                            <div className="flex-shrink-0 h-16 border-b-2 border-gray-200 flex items-center px-4">
-                                <a href="/">
-                                    <img
-                                        className="h-20 w-auto"
-                                        src={img}
-                                        alt="Mits logo"
-                                    />
-                                </a>
-                            </div>
+                            <div className="flex-shrink-0 h-16 border-b-2 border-gray-200 flex items-center px-4"></div>
                             <div className="mt-5 flex-1 h-0 overflow-y-auto">
                                 <nav className="px-2">
                                     {menus.map((item) => {
@@ -152,13 +142,7 @@ const NavBar = ({ menus, pages }) => {
                 className="hidden md:flex md:flex-shrink-0 border-r-2 border-gray-200">
                 <div className="flex flex-col w-64 bg-white ">
                     <div className="flex items-center border-b-2 h-12 mt-2 border-gray-200  flex-shrink-0 px-4">
-                        <a href="/">
-                            <img
-                                className="h-20 mx-auto w-auto"
-                                src={img}
-                                alt="Mits logo"
-                            />
-                        </a>
+                        Pandemic Handler
                     </div>
                     <div className="mt-5 h-0 flex-1 flex flex-col overflow-y-auto">
                         <nav className="flex-1 px-2 bg-white">
@@ -242,15 +226,6 @@ const NavBar = ({ menus, pages }) => {
                         </svg>
                     </button>
                     <span className="my-auto pl-2 truncate">{maintitle}</span>
-                    <a
-                        href="/"
-                        className="md:hidden ml-auto flex h-full items-center px-4">
-                        <img
-                            className="h-12 w-auto"
-                            src={logoBlack}
-                            alt="mits logo"
-                        />
-                    </a>
                 </div>
 
                 <main className="flex-1 relative z-0 overflow-y-auto pb-4 md:py-0 focus:outline-none">
@@ -259,13 +234,6 @@ const NavBar = ({ menus, pages }) => {
                         className="hidden md:flex w-full fixed bg-white mb-2 border-b-2 border-red-600 z-10">
                         <span className="px-6 flex py-2 w-1/2 my-auto text-lg text-black">
                             {maintitle}
-                        </span>
-                        <span className=" flex  w-1/2">
-                            <img
-                                className="h-12 fixed pr-10 right-0"
-                                src={logoBlack}
-                                alt="mits logo"
-                            />
                         </span>
                     </div>
 

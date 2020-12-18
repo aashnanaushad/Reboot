@@ -99,7 +99,7 @@ export default function Login() {
                         <label
                             className="block text-gray-700 text-sm font-bold mb-2"
                             htmlFor="userId">
-                            Admission No.
+                            User Name
                         </label>
                         <input
                             ref={myInput}
@@ -132,27 +132,7 @@ export default function Login() {
                             placeholder="******************"
                         />
                     </div>
-                    <div className="mb-2">
-                        <label
-                            className="block text-gray-700 text-sm font-bold mb-2"
-                            htmlFor="type">
-                            Type
-                        </label>
-                        <select
-                            name="type"
-                            value={form.type}
-                            onChange={handleChange}>
-                            <option value="student/loginStudent">
-                                Student
-                            </option>
-                            <option value="hod/loginHod">HOD</option>
-                            <option value="faculty/loginFaculty">
-                                Faculty
-                            </option>
-                            <option value="warden/loginWarden">Warden</option>
-                            <option value="admin/loginAdmin">Admin</option>
-                        </select>
-                    </div>
+
                     <div className="h-10">
                         <p className="text-red-500 text-xs italic bold">
                             {formError}

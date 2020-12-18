@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { A, navigate } from "hookrouter";
-import img from "./logo/mitslogo.png";
 export default function PublicNavBar() {
     const [shown, setShown] = useState(false);
     const links = [
@@ -13,9 +12,7 @@ export default function PublicNavBar() {
     return (
         <nav className="flex items-center justify-between flex-wrap bg-white">
             <A href="/">
-                <div className="flex-shrink-0 h-16 border-b-2 border-gray-200 flex items-center px-4">
-                    <img className="h-20 w-auto" src={img} alt="Mits logo" />
-                </div>
+                <div className="flex-shrink-0 h-16 border-b-2 border-gray-200 flex items-center px-4"></div>
             </A>
             <div className="block lg:hidden py-6 pr-6">
                 <button
