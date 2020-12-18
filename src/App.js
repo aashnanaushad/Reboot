@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { USER_TYPES } from "./Common/constants";
 import { FullLoading } from "./components/common/Loader";
 import { getCurrentUser } from "./Redux/actions";
-import FacultyRouter from "./Router/FacultyRouter";
+import DistrictAdminRouter from "./Router/DistrictAdminRouter";
 import PublicRouter from "./Router/PublicRouter";
 import PatientRouter from "./Router/PatientRouter";
 import AdminRouter from "./Router/AdminRouter";
@@ -46,7 +46,7 @@ function App() {
         } else if (
             currentUser.data.data.type === USER_TYPES.FACULTY_ADVISOR.type
         ) {
-            return <FacultyRouter />;
+            return <DistrictAdminRouter />;
         } else if (currentUser.data.data.type === USER_TYPES.STUDENT.type) {
             return <PatientRouter />;
         } else if (currentUser.data.data.type === USER_TYPES.ADMIN.type) {
