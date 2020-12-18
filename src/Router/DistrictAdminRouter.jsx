@@ -1,28 +1,29 @@
 import React from "react";
 import { useRoutes, useRedirect } from "hookrouter";
-import FacultyProfile from "../components/Faculty/FacultyProfile";
+import FacultyProfile from "../components/DistrictAdmin/DistrictAdminProfile";
+import CreateFacility from "../components/DistrictAdmin/CreateFacility.js";
 import NavBar from "../components/Navbars/NavBar";
 
 const routes = {
     "/profile": () => <FacultyProfile />,
+    "/createfacility": () => <CreateFacility />
 };
 const links = [
-    {
-        link: "/requests",
-        title: "Requests",
-        icon: "",
-    },
-
     {
         link: "/profile",
         title: "Profile",
         icon: "",
     },
+    {
+        link: "/createfacility",
+        title: "Create Facility",
+        icon: "",
+    },
 ];
-const FacilitatorRouter = () => {
-    useRedirect("/login", "/requests");
-    useRedirect("/", "/requests");
-    useRedirect("/home", "/requests");
+const DistrictAdminRouter = () => {
+    useRedirect("/login", "/profile");
+    useRedirect("/", "/profile");
+    useRedirect("/home", "/profile");
     const pages = useRoutes(routes);
 
     return (
@@ -37,4 +38,4 @@ const FacilitatorRouter = () => {
     );
 };
 
-export default FacilitatorRouter;
+export default DistrictAdminRouter;
