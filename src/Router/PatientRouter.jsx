@@ -2,27 +2,25 @@ import React from "react";
 import { useRoutes, useRedirect } from "hookrouter";
 // import LandingPage from "../components/common/LandingPage";
 // import Footer from "../components/common/Footer";
-import StudentHome from "../components/Student/StudentHome";
-import StudentProfile from "../components/Student/StudentProfile";
 import NavBar from "../components/Navbars/NavBar";
-import StudentRequestList from "../components/Student/StudentRequestList";
-import StudentMessageBox from "../components/Student/StudentMessageBox";
+import ConsultationForm from "../components/Patient/ConsultationForm";
+import PatientProfile from "../components/Patient/PatientProfile";
 const routes = {
     // "/": () => <LandingPage />,
-    "/leaveform": () => <StudentHome />,
-    "/requests": () => <StudentRequestList />,
-    "/requests/:id": ({ id }) => <StudentMessageBox id={id} />,
-    "/profile": () => <StudentProfile />,
+    // "/leaveform": () => <PatientsHome />,
+    // "/cons": () => <PatientsHome />,
+    "/patient/:id/consultation": ({ id }) => <ConsultationForm id={id} />,
+    "/patients": () => <PatientProfile />,
 };
 const links = [
     {
-        link: "/leaveform",
-        title: "Facility",
+        link: "/patient",
+        title: "Create consultation",
         icon: "",
     },
     {
-        link: "/requests",
-        title: "Laboratary",
+        link: "/patient",
+        title: "Update Details",
         icon: "",
     },
     {
@@ -31,10 +29,10 @@ const links = [
         icon: "",
     },
 ];
-const StudentRouter = () => {
-    useRedirect("/home", "/leaveform");
-    useRedirect("/", "/leaveform");
-    useRedirect("/login", "/leaveform");
+const PatientRouter = () => {
+    useRedirect("/home", "/patient");
+    useRedirect("/", "/patient");
+    useRedirect("/login", "/patient");
     const pages = useRoutes(routes);
 
     return (
@@ -49,4 +47,4 @@ const StudentRouter = () => {
     );
 };
 
-export default StudentRouter;
+export default PatientRouter;

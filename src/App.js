@@ -5,10 +5,11 @@ import { FullLoading } from "./components/common/Loader";
 import { getCurrentUser } from "./Redux/actions";
 import DistrictAdminRouter from "./Router/DistrictAdminRouter";
 import PublicRouter from "./Router/PublicRouter";
-import StudentRouter from "./Router/StudentRouter";
 import StateAdminRouter from "./Router/StateAdminRouter";
 import HealthOfficialRouter from "./Router/HealthOfficialRouter"
 import PanchayathAdminRouter from "./Router/PanchayathAdminRouter"
+import PatientRouter from "./Router/PatientRouter";
+import AdminRouter from "./Router/AdminRouter";
 import { useAbortableEffect } from "./util/useAbortableEffect";
 import PoliceRouter from "./Router/PoliceRouter";
 import "./animate.css";
@@ -56,6 +57,10 @@ function App() {
             return <StateAdminRouter />;
         } else if (currentUser.data.data.type === USER_TYPES.PUNCHAYATH_ADMIN.type) {
             return <PanchayathAdminRouter />;
+        } else if (currentUser.data.data.type === USER_TYPES.STUDENT.type) {
+            return <PatientRouter />;
+        } else if (currentUser.data.data.type === USER_TYPES.ADMIN.type) {
+            return <AdminRouter />;
         } else {
             return <PublicRouter />;
         }
