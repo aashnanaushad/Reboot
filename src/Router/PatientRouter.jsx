@@ -3,28 +3,27 @@ import { useRoutes, useRedirect } from "hookrouter";
 // import LandingPage from "../components/common/LandingPage";
 // import Footer from "../components/common/Footer";
 import NavBar from "../components/Navbars/NavBar";
-import ConsultationForm from "../components/Patient/ConsultationForm";
 import PatientProfile from "../components/Patient/PatientProfile";
 const routes = {
     // "/": () => <LandingPage />,
     // "/leaveform": () => <PatientsHome />,
     // "/cons": () => <PatientsHome />,
-    "/patient/:id/consultation": ({ id }) => <ConsultationForm id={id} />,
+
     "/patients": () => <PatientProfile />,
 };
 const links = [
     {
-        link: "/patient",
+        link: "/patients",
         title: "Create consultation",
         icon: "",
     },
     {
-        link: "/patient",
+        link: "/patients",
         title: "Update Details",
         icon: "",
     },
     {
-        link: "/profile",
+        link: "/patients",
         title: "Profile",
         icon: "",
     },
