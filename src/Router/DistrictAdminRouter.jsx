@@ -1,10 +1,6 @@
 import React from "react";
 import { useRoutes, useRedirect } from "hookrouter";
 
-import FacilityProfile from "../components/DistrictAdmin/DistrictAdminProfile";
-import CreateFacility from "../components/DistrictAdmin/CreateFacility.js";
-import Facility from "../components/DistrictAdmin/Facility";
-import FacilityView from "../components/DistrictAdmin/FacilityView";
 import NavBar from "../components/Navbars/NavBar";
 
 const routes = {};
