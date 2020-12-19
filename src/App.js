@@ -59,7 +59,7 @@ function App() {
             currentUser.data.data.type === USER_TYPES.PUNCHAYATH_ADMIN.type
         ) {
             return <PanchayathAdminRouter />;
-        } else if (currentUser.data.data.type === USER_TYPES.STUDENT.type) {
+        } else if (currentUser.data.data.type === USER_TYPES.USER.type) {
             return <PatientRouter />;
         } else {
             return <PublicRouter />;

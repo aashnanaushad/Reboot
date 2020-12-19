@@ -26,11 +26,16 @@ function LandingPage() {
 
             <div className="flex flex-wrap w-full md:w-1/3 ">
                 <div className="flex flex-wrap ml-auto">
-                    <div className="flex w-full">
+                    <div className="flex flex-col w-full">
                         <button
                             onClick={() => navigate("/login")}
                             className="mx-auto md:mr-0 my-2 text-white px-8 w-full max-w-sm  h-12 bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none ">
                             <span> &gt; Authorized Login</span>
+                        </button>
+                        <button
+                            onClick={() => navigate("/register")}
+                            className="mx-auto md:mr-0 my-2 text-white px-8 w-full max-w-sm  h-12 bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none ">
+                            <span> &gt; User Registration</span>
                         </button>
                     </div>
                     <br />

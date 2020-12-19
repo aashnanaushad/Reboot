@@ -4,6 +4,7 @@ export const USER_TYPES = {
     PUNCHAYATH_ADMIN: { type: "panchayath", string: "Panchayath Admin" },
     DISTRICT_ADMIN: { type: "district", string: "District Admin" },
     STATE_ADMIN: { type: "admin", string: "State Admin" },
+    USER: { type: "user", string: "User" }
 };
 export const CATEGORY = [
     { id: 1, text: "Select Category" },

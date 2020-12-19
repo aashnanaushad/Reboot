@@ -1,6 +1,6 @@
 export default {
     register: {
-        path: "/api/v1/auth/register",
+        path: "/api/v1/user/userRegister",
         method: "POST",
         noAuth: true,
     },
@@ -23,7 +23,7 @@ export default {
     },
 
     createConsultation: {
-        path: "/api/v1/consultation/createConsulation",
+        path: "/api/v1/consultation/createConsultation",
         method: "POST",
         noAuth: false,
     },

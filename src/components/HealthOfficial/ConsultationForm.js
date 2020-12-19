@@ -13,6 +13,7 @@ function ConsultationForm() {
         examinationDetail: "",
         treatmentSummary: "",
         category: "",
+        decision: "",
         advice: "",
         prescription: "",
         verifiedBy: "",
@@ -27,11 +28,12 @@ function ConsultationForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const form1 = {
-            patientId: "1",
+            patientId: "5fdde3dc03687514b403b662",
             symptom: form.symptom,
             examinationDetail: form.examinationDetail,
             treatmentSummary: form.treatmentSummary,
             category: form.category,
+            decision: form.decision,
             advice: form.advice,
             prescription: form.prescription,
             verifiedBy: "healthofficial",
