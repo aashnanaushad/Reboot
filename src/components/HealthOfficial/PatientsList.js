@@ -15,9 +15,6 @@ export default function PatientsList() {
                     </dl>
                 </div>
             </div>
-            <div className="text-sm font-semibold mb-2">
-                Search Patient by name
-            </div>
 
             <div className="max-w-5xl  mx-auto">
                 <div className="flex flex-wrap md:-mx-4">
