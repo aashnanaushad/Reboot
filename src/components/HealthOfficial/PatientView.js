@@ -1,4 +1,5 @@
 import React from "react";
+import { navigate } from "hookrouter";
 
 export default function PatientView() {
     return (
@@ -52,6 +53,78 @@ export default function PatientView() {
                                         Suspect/positive or aaaaaa
                                     </i>
                                 </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="md:w-1/3 mx-2">
+                    <div
+                        id="actions"
+                        className="space-y-2 mt-2 flex-col justify-between flex h-full">
+                        <div>
+                            <div className="p-2 bg-white rounded-lg shadow text-center">
+                                <div className="flex justify-between">
+                                    <div className="w-1/2 border-r-2">
+                                        <div className="text-sm leading-5 font-medium text-gray-500">
+                                            Disease Status
+                                        </div>
+                                        <div className="mt-1 text-xl font-semibold leading-5 text-gray-900">
+                                            POSITIVE
+                                        </div>
+                                    </div>
+                                    <div className="w-1/2">
+                                        <div className="text-sm leading-5 font-medium text-gray-500">
+                                            Status
+                                        </div>
+                                        <div className="mt-1 text-xl font-semibold leading-5 text-gray-900">
+                                            LIVE
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex justify-between p-2 bg-white rounded-lg shadow px-4 mt-2">
+                                <div className="w-1/2">
+                                    <div className="text-sm leading-5 font-medium text-gray-500">
+                                        Created
+                                    </div>
+                                    <div className="mt-1 text-sm leading-5 text-gray-900 whitespace-pre">
+                                        <div className="text-sm">
+                                            Created by
+                                        </div>
+                                        <div className="text-xs">
+                                            time of creation
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="w-1/2">
+                                    <div className="text-sm leading-5 font-medium text-gray-500">
+                                        Last Edited
+                                    </div>
+                                    <div className="mt-1 text-sm leading-5 text-gray-900 whitespace-pre">
+                                        <div className="text-sm">
+                                            edited person
+                                        </div>
+                                        <div className="text-xs">time</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="space-y-2 py-2">
+                            <div>
+                                <button className="inline-flex items-center justify-center whitespace-no-wrap text-sm font-semibold py-2 px-4 bg-red-700 text-white rounded cursor-pointer w-full">
+                                    <i className="fas fa-pencil-alt mr-2" />
+                                    Update Patient Details
+                                </button>
+                            </div>
+                            <div>
+                                <button
+                                    onClick={navigate(
+                                        "/patient/:id/consultation"
+                                    )}
+                                    className="inline-flex items-center justify-center whitespace-no-wrap text-sm font-semibold py-2 px-4 bg-red-700 text-white rounded cursor-pointer w-full">
+                                    <i className="fas fa-plus-square mr-2" />
+                                    Add Consultation
+                                </button>
                             </div>
                         </div>
                     </div>
