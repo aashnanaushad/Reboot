@@ -10,12 +10,12 @@ const routes = {
     "/createfacility": () => <CreateFacility />,
     "/facilities": () => <Facility />,
     "/facility/:id": ({ id }) => <FacilityView id={id} />,
-    "/profile": () => <FacilityProfile />,
+    "/facilityprofile": () => <FacilityProfile />,
 };
 const links = [
     {
-        link: "/profile",
-        title: "Profile",
+        link: "/facilities",
+        title: "Facilities",
         icon: "",
     },
     {
@@ -23,16 +23,12 @@ const links = [
         title: "Create Facility",
         icon: "",
     },
-    {
-        link: "/facilities",
-        title: "Facilities",
-        icon: "",
-    },
+
 ];
 const StateAdminRouter = () => {
-    useRedirect("/login", "/profile");
-    useRedirect("/", "/profile");
-    useRedirect("/home", "/profile");
+    useRedirect("/login", "/facilities");
+    useRedirect("/", "/facilities");
+    useRedirect("/home", "/facilities");
     const pages = useRoutes(routes);
 
     return (
@@ -40,8 +36,8 @@ const StateAdminRouter = () => {
             {!pages ? (
                 <div className="">Error 404: Page not found</div>
             ) : (
-                <NavBar pages={pages} menus={links} />
-            )}
+                    <NavBar pages={pages} menus={links} />
+                )}
         </div>
     );
 };

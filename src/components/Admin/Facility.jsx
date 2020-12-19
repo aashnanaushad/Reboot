@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAllFacilities } from "../../Redux/actions";
+import { navigate } from "hookrouter";
 
 export default function Facility() {
     const dispatch = useDispatch();
@@ -59,11 +60,14 @@ export default function Facility() {
                 {facilities.map((facility) => {
                     return (
                         <div className="md:w-1/3 w-full p-2">
-                            <div className="bg-white shadow overflow-hidden  sm:rounded-lg mt-4 p-4 h-full">
-                                <div className="mt-4 text-2xl text-center font-semibold px-2 -py-1 rounded shadow bg-gray-200">
-                                    {facility.userName}
-                                </div>
 
+                            <div className="bg-white shadow overflow-hidden  sm:rounded-lg mt-4 p-4 h-full">
+                                <button
+                                    onClick={() => navigate(`/facility/${facility.id}`)}>
+                                    <div className="mt-4 text-2xl text-center font-semibold px-2 -py-1 rounded shadow bg-gray-200">
+                                        {facility.userName}
+                                    </div>
+                                </button>
                                 <div className="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:py-5">
                                     <dt className="text-sm leading-5 font-medium text-gray-500">
                                         Facility Type
@@ -86,10 +90,10 @@ export default function Facility() {
                                         Kerala
                                     </dd>
                                     <dt className="text-sm leading-5 font-medium text-gray-500">
-                                        {facility.district}
+                                        District
                                     </dt>
                                     <dd className="text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                                        Ernakulam
+                                        {facility.district}
                                     </dd>
                                     <dt className="text-sm leading-5 font-medium text-gray-500">
                                         Local Body
