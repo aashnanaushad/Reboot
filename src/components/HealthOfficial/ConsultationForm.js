@@ -16,7 +16,7 @@ function ConsultationForm() {
         decision: "",
         advice: "",
         prescription: "",
-        verifiedBy: ""
+        verifiedBy: "",
     };
     const [form, setForm] = useState(initForm);
     const handleChange = (e) => {
@@ -36,7 +36,7 @@ function ConsultationForm() {
             decision: form.decision,
             advice: form.advice,
             prescription: form.prescription,
-            verifiedBy: "healthofficial"
+            verifiedBy: "healthofficial",
         };
 
         dispatch(createConsultation(form1)).then((res) => {
@@ -58,7 +58,7 @@ function ConsultationForm() {
                 window.location.reload();
             }
         });
-    }
+    };
     return (
         <div className="leading-loose mx-auto">
             <form className="max-w-xl mx-auto m-4 p-10 bg-white rounded shadow-xl">
