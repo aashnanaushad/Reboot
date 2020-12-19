@@ -3,11 +3,16 @@ import { useRoutes, useRedirect } from "hookrouter";
 import HealthOfficialProfile from "../components/HealthOfficial/HealthOfficialProfile";
 
 import ConsultationForm from "../components/HealthOfficial/ConsultationForm";
+import PatientsList from "../components/HealthOfficial/PatientsList";
+import PatientView from "../components/HealthOfficial/PatientView";
+
 import NavBar from "../components/Navbars/NavBar";
 
 const routes = {
     "/profile": () => <HealthOfficialProfile />,
     "/patient/:id/consultation": ({ id }) => <ConsultationForm id={id} />,
+    "/patients": () => <PatientsList />,
+    "/patient/:id": ({ id }) => <PatientView id={id} />,
 };
 const links = [
     {
@@ -18,6 +23,11 @@ const links = [
     {
         link: "/patient/:id/consultation",
         title: "Create consultation",
+        icon: "",
+    },
+    {
+        link: "/patients",
+        title: "Patients",
         icon: "",
     },
 ];
