@@ -28,4 +28,14 @@ export default {
         noAuth: false,
     },
 
+    createFacility: {
+        path: "/api/v1/facility/add-facility",
+        method: "POST",
+        noAuth: false,
+    },
+    getAllFacilities: {
+        path: "/api/v1/facility/all-facility",
+        method: "GET",
+        noAuth: false,
+    },
 };

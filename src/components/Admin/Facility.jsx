@@ -1,7 +1,17 @@
-import React from "react";
-import { A } from "hookrouter";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getAllFacilities } from "../../Redux/actions";
 
 export default function Facility() {
+    const dispatch = useDispatch();
+    const [facilities, setFacilities] = useState([]);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        dispatch(getAllFacilities()).then((res) => {
+            console.log(res.data);
+        });
+    });
+
     return (
         <div>
             <div className="max-w-3xl mx-auto flex justify-around">
@@ -46,7 +56,7 @@ export default function Facility() {
                 Facility Details
             </div>
             <div class="max-w-full flex">
-                <div className="md:w-1/3 w-full p-2">
+                {/* <div className="md:w-1/3 w-full p-2">
                     <div className="bg-white shadow overflow-hidden  sm:rounded-lg mt-4 p-4 h-full">
                         <div className="mt-4 text-2xl text-center font-semibold px-2 -py-1 rounded shadow bg-gray-200">
                             Govt Medical College
@@ -94,8 +104,8 @@ export default function Facility() {
                         </div>
                         <div className="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:py-5"></div>
                     </div>
-                </div>
-                <div className="md:w-1/3 w-full p-2">
+                </div> */}
+                {/* <div className="md:w-1/3 w-full p-2">
                     <div className="bg-white shadow overflow-hidden  sm:rounded-lg mt-4 p-4 h-full">
                         <div className="mt-4 text-2xl text-center font-semibold px-2 -py-1 rounded shadow bg-gray-200">
                             Hilltop FLTC
@@ -143,7 +153,7 @@ export default function Facility() {
                         </div>
                         <div className="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:py-5"></div>
                     </div>
-                </div>
+                </div> */}
                 <div className="md:w-1/3 w-full p-2">
                     <div className="bg-white shadow overflow-hidden  sm:rounded-lg mt-4 p-4 h-full">
                         <div className="mt-4 text-2xl text-center font-semibold px-2 -py-1 rounded shadow bg-gray-200">

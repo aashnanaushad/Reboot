@@ -37,7 +37,7 @@ export default function Login() {
         let err = "";
         let formValid = true;
         if (form.userName === "" || form.password === "") {
-            err = "Admission no. / Password is empty";
+            err = "User id / Password is empty";
             formValid = false;
         }
         setFormError(err);
@@ -102,14 +102,15 @@ export default function Login() {
                         </label>
                         <input
                             ref={myInput}
-                            aria-label="Admission No."
+                            aria-label="user name"
                             name="userName"
                             type="text"
                             value={form.userName}
                             onChange={handleChange}
-                            className={`appearance-none border ${formError ? "border-red-500" : ""
-                                } rounded w-full py-2 px-3 text-gray-700 bg-gray-200 leading-tight focus:outline-none focus:shadow-outline`}
-                            placeholder="Admission No."
+                            className={`appearance-none border ${
+                                formError ? "border-red-500" : ""
+                            } rounded w-full py-2 px-3 text-gray-700 bg-gray-200 leading-tight focus:outline-none focus:shadow-outline`}
+                            placeholder="User name"
                         />
                     </div>
                     <div className="mb-2">
@@ -124,8 +125,9 @@ export default function Login() {
                             type="password"
                             value={form.password}
                             onChange={handleChange}
-                            className={`appearance-none border ${formError ? "border-red-500" : ""
-                                } rounded w-full py-2 px-3 text-gray-700 bg-gray-200 leading-tight focus:outline-none focus:shadow-outline`}
+                            className={`appearance-none border ${
+                                formError ? "border-red-500" : ""
+                            } rounded w-full py-2 px-3 text-gray-700 bg-gray-200 leading-tight focus:outline-none focus:shadow-outline`}
                             placeholder="******************"
                         />
                     </div>
@@ -138,15 +140,17 @@ export default function Login() {
                     <div className="flex items-center justify-between">
                         <button
                             type="submit"
-                            className={`flex items-center ${formLoading
-                                ? "bg-gray-600"
-                                : "bg-red-700 hover:bg-red-800"
-                                } text-white font-bold py-2 px-4 sm:px-3 rounded focus:outline-none focus:shadow-outline`}>
+                            className={`flex items-center ${
+                                formLoading
+                                    ? "bg-gray-600"
+                                    : "bg-red-700 hover:bg-red-800"
+                            } text-white font-bold py-2 px-4 sm:px-3 rounded focus:outline-none focus:shadow-outline`}>
                             <svg
-                                className={`h-5 w-5 ${formLoading
-                                    ? "text-gray-400"
-                                    : "text-red-600"
-                                    } transition ease-in-out duration-150 mr-1`}
+                                className={`h-5 w-5 ${
+                                    formLoading
+                                        ? "text-gray-400"
+                                        : "text-red-600"
+                                } transition ease-in-out duration-150 mr-1`}
                                 fill="currentColor"
                                 viewBox="0 0 20 20">
                                 <path

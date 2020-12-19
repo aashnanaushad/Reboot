@@ -1,16 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     DISTRICT_CHOICES,
     STATE,
     FACILITY_TYPES,
 } from "../../Common/constants";
+import { useDispatch } from "react-redux";
+import { createFacility } from "../../Redux/actions";
+import * as Notficiation from "../../util/Notifications";
+import { navigate } from "hookrouter";
 
 const CreateFacility = () => {
+    const dispatch = useDispatch();
+    const initForm = {
+        facilityType: "",
+        facilityName: "",
+        address: "",
+        state: "",
+        district: "",
+        localBody: "",
+        ward: "",
+        pincode: "",
+        contact: "",
+        oxygenCapacity: "",
+        latitude: "",
+        longitude: "",
+    };
+    const [form, setForm] = useState(initForm);
     const handleChange = (e) => {
         const { value, name } = e.target;
+        const fieldValue = { ...form };
+        fieldValue[name] = value;
+        setForm(fieldValue);
     };
     const handleSubmit = (e) => {
-        const { value, name } = e.target;
+        e.preventDefault();
+
+        dispatch(createFacility(form)).then((res) => {
+            if (
+                res &&
+                res.statusCode !== 400 &&
+                res.statusCode !== 401 &&
+                res.statusCode !== 404 &&
+                res.statusCode !== 500
+            ) {
+                Notficiation.Success({
+                    msg: "Facility added Successfully",
+                });
+                navigate("/facilities");
+                window.location.reload();
+            } else {
+                Notficiation.Error({
+                    msg: "Something went wrong",
+                });
+                window.location.reload();
+            }
+        });
     };
     return (
         <div className="leading-loose mx-auto">
@@ -29,8 +73,8 @@ const CreateFacility = () => {
                     <div className="relative">
                         <select
                             className="appearance   -none focus:shadow-outline w-full py-1 px-5 py-1 text-gray-700 bg-gray-200 rounded"
-                            name="decision"
-                            // value={form.district}
+                            name="facilityType"
+                            value={form.facilityType}
                             onChange={handleChange}>
                             {FACILITY_TYPES.map((el) => (
                                 <option value={el.text} key={el.text}>
@@ -56,9 +100,9 @@ const CreateFacility = () => {
                     </label>
                     <input
                         className="form-textarea focus:shadow-outline w-full px-5 py-1 text-gray-700 border border-gray-400  rounded"
-                        id="address"
-                        name="address"
-                        // value={form.address}
+                        id="facilityName"
+                        name="facilityName"
+                        value={form.facilityName}
                         onChange={handleChange}
                         type="text"
                         placeholder="Name of Facility"
@@ -71,13 +115,13 @@ const CreateFacility = () => {
                     <div className="w-full md:w-1/2 inline-block mt-2 -mx-1 pl-1">
                         <label
                             className="block text-sm text-gray-600"
-                            htmlFor="district">
+                            htmlFor="state">
                             State*
                         </label>
                         <div className="relative">
                             <select
                                 className="appearance-none focus:shadow-outline w-full py-1 px-5 py-1 text-gray-700 bg-gray-200 rounded"
-                                name="category"
+                                name="state"
                                 // value={form.district}
                                 onChange={handleChange}>
                                 {STATE.map((el) => (
@@ -105,8 +149,8 @@ const CreateFacility = () => {
                         <div className="relative">
                             <select
                                 className="appearance-none focus:shadow-outline w-full py-1 px-5 py-1 text-gray-700 bg-gray-200 rounded"
-                                name="category"
-                                // value={form.district}
+                                name="district"
+                                value={form.district}
                                 onChange={handleChange}>
                                 {DISTRICT_CHOICES.map((el) => (
                                     <option value={el.text} key={el.text}>
@@ -134,12 +178,12 @@ const CreateFacility = () => {
                         </label>
                         <input
                             className="form-textarea focus:shadow-outline w-full  px-5 py-1 text-gray-700 border border-gray-400  rounded"
-                            id="address"
-                            name="address"
-                            // value={form.address}
+                            id="localBody"
+                            name="localBody"
+                            value={form.localBody}
                             onChange={handleChange}
                             type="text"
-                            placeholder="Local "
+                            placeholder="Local Body "
                         />
                         <div className="text-xs italic full-width text-red-500">
                             {/* {error.address} */}
@@ -148,14 +192,14 @@ const CreateFacility = () => {
                     <div className="mt-2 ">
                         <label
                             className="block text-sm text-gray-600"
-                            htmlFor="address">
+                            htmlFor="ward">
                             Ward*
                         </label>
                         <input
                             className="form-textarea focus:shadow-outline  w-full px-5 py-1 text-gray-700 border border-gray-400  rounded"
-                            id="address"
-                            name="address"
-                            // value={form.address}
+                            id="ward"
+                            name="ward"
+                            value={form.ward}
                             onChange={handleChange}
                             type="text"
                             placeholder="Ward"
@@ -175,7 +219,7 @@ const CreateFacility = () => {
                         className="form-textarea focus:shadow-outline w-full px-5 py-1 text-gray-700 border border-gray-400  rounded"
                         id="address"
                         name="address"
-                        // value={form.address}
+                        value={form.address}
                         onChange={handleChange}
                         type="text"
                         placeholder="Address"
@@ -187,14 +231,14 @@ const CreateFacility = () => {
                 <div className="mt-2">
                     <label
                         className="block text-sm text-gray-600"
-                        htmlFor="address">
+                        htmlFor="pincode">
                         Pincode
                     </label>
                     <input
                         className="form-textarea focus:shadow-outline w-full px-5 py-1 text-gray-700 border border-gray-400  rounded"
-                        id="address"
-                        name="address"
-                        // value={form.address}
+                        id="pincode"
+                        name="pincode"
+                        value={form.pincode}
                         onChange={handleChange}
                         type="text"
                         placeholder="Pincode"
@@ -212,9 +256,9 @@ const CreateFacility = () => {
                     </label>
                     <input
                         className="form-textarea w-full focus:shadow-outline px-5 py-1 text-gray-700 border border-gray-400 rounded"
-                        id="policy"
-                        name="policy"
-                        // value={form.policy}
+                        id="contact"
+                        name="contact"
+                        value={form.contact}
                         onChange={handleChange}
                         type="text"
                         placeholder="Contact Number"
@@ -232,6 +276,7 @@ const CreateFacility = () => {
                 <div className="mt-1 flex items-center">
                     <button
                         className="px-4 py-1 w-full text-white font-bold tracking-wider bg-red-800 cursor-default"
+                        onClick={handleSubmit}
                         type="submit">
                         Submit
                     </button>

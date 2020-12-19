@@ -32,5 +32,9 @@ export const createConsultation = (form) => {
     return fireRequest("createConsultation", [], form);
 };
 
-
-
+export const createFacility = (form) => {
+    return fireRequest("createFacility", [], form);
+};
+export const getAllFacilities = (form) => {
+    return fireRequest("getAllFacilities", [], form);
+};
