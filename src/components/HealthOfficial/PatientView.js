@@ -1,8 +1,7 @@
 import React from "react";
 import { navigate } from "hookrouter";
 
-export default function PatientView() {
-    const id = "5fdde3dc03687514b403b662"
+export default function PatientView(id) {
     return (
         <div>
             <div className="font-bold text-3xl text-red-800 ml-2">
@@ -24,18 +23,18 @@ export default function PatientView() {
                         <div className="grid grid-cols-1 gap-x-4 gap-y-2 m-2 md:gap-y-8 sm:grid-cols-3 mt-2">
                             <div className="sm:col-span-1">
                                 <div className="text-sm py-2  leading-5 font-medium text-gray-500">
-                                    Date of Birth, Gender
+                                    Date of Birth
                                 </div>
                                 <div className="mt-1 text-sm py-2  leading-5 text-gray-900">
-                                    09/04/1999, Female
+                                    09/04/1999
                                 </div>
                             </div>
                             <div className="sm:col-span-1">
                                 <div className="text-sm py-2  leading-5 font-medium text-gray-500">
-                                    Phone
+                                    Gender
                                 </div>
                                 <div className="mt-1 text-sm  py-2  leading-5 text-gray-900">
-                                    9568451265
+                                    Female
                                 </div>
                             </div>
                             <div className="sm:col-span-1">
@@ -51,7 +50,7 @@ export default function PatientView() {
                                     <i
                                         class="mr-2 text-md p-1 text-green-500 fas fa-lock"
                                         aria-hidden="true">
-                                        Suspect/positive or aaaaaa
+                                        positive
                                     </i>
                                 </span>
                             </div>
@@ -103,9 +102,9 @@ export default function PatientView() {
                                     </div>
                                     <div className="mt-1 text-sm leading-5 text-gray-900 whitespace-pre">
                                         <div className="text-sm">
-                                            edited person
+                                            healthofficial
                                         </div>
-                                        <div className="text-xs">time</div>
+                                        <div className="text-xs">09-12-2020</div>
                                     </div>
                                 </div>
                             </div>
