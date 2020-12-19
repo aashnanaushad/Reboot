@@ -23,7 +23,7 @@ export default {
     },
 
     createConsultation: {
-        path: "/api/v1/consultation/createConsulation",
+        path: "/api/v1/consultation/createConsultation",
         method: "POST",
         noAuth: false,
     },
