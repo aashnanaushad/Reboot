@@ -2,6 +2,7 @@ import React from "react";
 import { navigate } from "hookrouter";
 
 export default function PatientView() {
+    const id = "5fdde3dc03687514b403b662"
     return (
         <div>
             <div className="font-bold text-3xl text-red-800 ml-2">
@@ -117,7 +118,8 @@ export default function PatientView() {
                                 </button>
                             </div>
                             <div>
-                                <button className="inline-flex items-center justify-center whitespace-no-wrap text-sm font-semibold py-2 px-4 bg-red-700 text-white rounded cursor-pointer w-full">
+                                <button className="inline-flex items-center justify-center whitespace-no-wrap text-sm font-semibold py-2 px-4 bg-red-700 text-white rounded cursor-pointer w-full"
+                                    onClick={() => navigate(`/patient/${id}/consultation`)}>
                                     <i className="fas fa-plus-square mr-2" />
                                     Add Consultation
                                 </button>

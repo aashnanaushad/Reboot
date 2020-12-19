@@ -4,7 +4,6 @@ import FacilityProfile from "../components/DistrictAdmin/DistrictAdminProfile";
 import CreateFacility from "../components/DistrictAdmin/CreateFacility.js";
 import Facility from "../components/DistrictAdmin/Facility";
 import FacilityView from "../components/DistrictAdmin/FacilityView";
-
 import NavBar from "../components/Navbars/NavBar";
 
 const routes = {
@@ -41,8 +40,8 @@ const DistrictAdminRouter = () => {
             {!pages ? (
                 <div className="">Error 404: Page not found</div>
             ) : (
-                <NavBar pages={pages} menus={links} />
-            )}
+                    <NavBar pages={pages} menus={links} />
+                )}
         </div>
     );
 };

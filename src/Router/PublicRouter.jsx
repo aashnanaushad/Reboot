@@ -2,17 +2,17 @@ import React from "react";
 import { useRoutes, navigate, useRedirect } from "hookrouter";
 import PublicNavBar from "../components/Navbars/PublicNavBar";
 import Login from "../components/Account/Login";
-// import Hotel from "../components/Browse/Hotel";
+import Register from "../components/Account/Register"
 import ForgotPassword from "../components/Account/ForgotPassword";
 import ResetPassword from "../components/Account/ResetPassword";
 import LandingPage from "../components/common/LandingPage";
 import ConsultationForm from "../components/HealthOfficial/ConsultationForm";
 import PatientProfile from "../components/Patient/PatientProfile";
-
 import Footer from "../components/common/Footer";
 const routes = {
     "/home": () => <LandingPage />,
     "/login": () => <Login />,
+    "/register": () => <Register />,
     "/forgot-password": () => <ForgotPassword />,
     "/reset-password/:token": ({ token }) => <ResetPassword token={token} />,
     "/patient/:id/consultation": ({ id }) => <ConsultationForm id={id} />,

@@ -1,6 +1,6 @@
 export default {
     register: {
-        path: "/api/v1/auth/register",
+        path: "/api/v1/user/userRegister",
         method: "POST",
         noAuth: true,
     },
