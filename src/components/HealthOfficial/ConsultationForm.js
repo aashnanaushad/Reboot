@@ -1,39 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import { CATEGORY } from "../../Common/constants";
 import { DECISION_AFTER_CONSULTATION } from "../../Common/constants";
+import { useDispatch } from "react-redux";
+import { createConsultation } from "../../Redux/actions";
+import * as Notficiation from "../../util/Notifications";
 
 function ConsultationForm() {
-    // return (
-    //     <div className="bg-white max-w-4xl mx-auto p-4">
-    //         <div className="mt-2">
-    //             <div className="text-xl font-bold my-2">Consultation</div>
-    //             <label className="block text-sm text-gray-600" htmlFor="name">
-    //                 History
-    //             </label>
-    //             <input
-    //                 className="w-full focus:shadow-outline px-5 py-1 text-gray-700 bg-gray-200 rounded"
-    //                 id="hotel-name"
-    //                 name="name"
-    //                 value=""
-    //                 onChange=""
-    //                 type="text"
-    //                 placeholder="Enter Hotel Name"
-    //             />
-    //             <div className="text-xs italic text-red-500">{}</div>
-    //         </div>
-    //     </div>
-    // );
+    const dispatch = useDispatch();
+    const initForm = {
+        patientId: "",
+        symptom: "",
+        examinationDetail: "",
+        treatmentSummary: "",
+        category: "",
+        advice: "",
+        prescription: "",
+        verifiedBy: ""
+    };
+    const [form, setForm] = useState(initForm);
     const handleChange = (e) => {
         const { value, name } = e.target;
+        const fieldValue = { ...form };
+        fieldValue[name] = value;
+        setForm(fieldValue);
     };
     const handleSubmit = (e) => {
-        const { value, name } = e.target;
-    };
+        e.preventDefault();
+        const form1 = {
+            patientId: "1",
+            symptom: form.symptom,
+            examinationDetail: form.examinationDetail,
+            treatmentSummary: form.treatmentSummary,
+            category: form.category,
+            advice: form.advice,
+            prescription: form.prescription,
+            verifiedBy: "healthofficial"
+        };
+
+        dispatch(createConsultation(form1)).then((res) => {
+            if (
+                res &&
+                res.statusCode !== 400 &&
+                res.statusCode !== 401 &&
+                res.statusCode !== 404 &&
+                res.statusCode !== 500
+            ) {
+                Notficiation.Success({
+                    msg: "Consultation Submitted Successfully",
+                });
+                window.location.reload();
+            } else {
+                Notficiation.Error({
+                    msg: "Something went wrong",
+                });
+                window.location.reload();
+            }
+        });
+    }
     return (
         <div className="leading-loose mx-auto">
-            <form
-                onSubmit={handleSubmit}
-                className="max-w-xl mx-auto m-4 p-10 bg-white rounded shadow-xl">
+            <form className="max-w-xl mx-auto m-4 p-10 bg-white rounded shadow-xl">
                 <p className="text-gray-800 font-medium text-center">
                     Consultation Form
                 </p>
@@ -41,14 +67,14 @@ function ConsultationForm() {
                 <div className="mt-2">
                     <label
                         className="block text-sm text-gray-600"
-                        htmlFor="address">
+                        htmlFor="symptom">
                         Symptoms
                     </label>
                     <textarea
                         className="form-textarea focus:shadow-outline w-full px-5 py-1 text-gray-700 border border-gray-400  rounded"
-                        id="address"
-                        name="address"
-                        // value={form.address}
+                        id="symptom"
+                        name="symptom"
+                        value={form.symptom}
                         onChange={handleChange}
                         type="text"
                         placeholder="Symptoms of the Patient"
@@ -60,14 +86,14 @@ function ConsultationForm() {
                 <div className="mt-2">
                     <label
                         className="block text-sm text-gray-600"
-                        htmlFor="address">
+                        htmlFor="examinationDetail">
                         Examination Details and Clinical Conditions
                     </label>
                     <textarea
                         className="form-textarea focus:shadow-outline w-full px-5 py-1 text-gray-700 border border-gray-400  rounded"
-                        id="address"
-                        name="address"
-                        // value={form.address}
+                        id="examinationDetail"
+                        name="examinationDetail"
+                        value={form.examinationDetail}
                         onChange={handleChange}
                         type="text"
                         placeholder="Information Optional"
@@ -79,14 +105,14 @@ function ConsultationForm() {
                 <div className="mt-2">
                     <label
                         className="block text-sm text-gray-600"
-                        htmlFor="address">
+                        htmlFor="treatmentSummary">
                         Treatment Summary
                     </label>
                     <textarea
                         className="form-textarea focus:shadow-outline w-full px-5 py-1 text-gray-700 border border-gray-400  rounded"
-                        id="address"
-                        name="address"
-                        // value={form.address}
+                        id="treatmentSummary"
+                        name="treatmentSummary"
+                        value={form.treatmentSummary}
                         onChange={handleChange}
                         type="text"
                         placeholder="Information Optional"
@@ -100,14 +126,15 @@ function ConsultationForm() {
                     <div className="w-full md:w-1/2 inline-block mt-2 -mx-1 pl-1">
                         <label
                             className="block text-sm text-gray-600"
-                            htmlFor="district">
+                            htmlFor="category">
                             Category
                         </label>
                         <div className="relative">
                             <select
                                 className="appearance-none focus:shadow-outline w-full py-1 px-5 py-1 text-gray-700 bg-gray-200 rounded"
                                 name="category"
-                                // value={form.district}
+                                id="category"
+                                value={form.category}
                                 onChange={handleChange}>
                                 {CATEGORY.map((el) => (
                                     <option value={el.text} key={el.text}>
@@ -135,7 +162,8 @@ function ConsultationForm() {
                             <select
                                 className="appearance-none focus:shadow-outline w-full py-1 px-5 py-1 text-gray-700 bg-gray-200 rounded"
                                 name="decision"
-                                // value={form.district}
+                                id="decision"
+                                value={form.decision}
                                 onChange={handleChange}>
                                 {DECISION_AFTER_CONSULTATION.map((el) => (
                                     <option value={el.text} key={el.text}>
@@ -163,9 +191,9 @@ function ConsultationForm() {
                     </label>
                     <textarea
                         className="form-textarea w-full focus:shadow-outline px-5 py-1 text-gray-700 border border-gray-400 rounded"
-                        id="policy"
-                        name="policy"
-                        // value={form.policy}
+                        id="advice"
+                        name="advice"
+                        value={form.advice}
                         onChange={handleChange}
                         type="text"
                         placeholder="Advices given to patient"
@@ -182,9 +210,9 @@ function ConsultationForm() {
                     </label>
                     <textarea
                         className="form-textarea w-full focus:shadow-outline px-5 py-1 text-gray-700 border border-gray-400 rounded"
-                        id="policy"
-                        name="policy"
-                        // value={form.policy}
+                        id="prescription"
+                        name="prescription"
+                        value={form.prescription}
                         onChange={handleChange}
                         type="text"
                         placeholder="Enter the prescription details"
@@ -201,9 +229,9 @@ function ConsultationForm() {
                     </label>
                     <input
                         className="form-textarea w-full focus:shadow-outline px-5 py-1 text-gray-700 border border-gray-400 rounded"
-                        id="policy"
-                        name="policy"
-                        // value={form.policy}
+                        id="verifiedBy"
+                        name="verifiedBy"
+                        value={form.verifiedBy}
                         onChange={handleChange}
                         type="text"
                         placeholder="Attending Doctors name and Designation"
@@ -213,27 +241,19 @@ function ConsultationForm() {
                     </div>
                 </div>
 
-                <div className="h-10">
+                {/* <div className="h-10">
                     <p className="text-red-500 text-xs italic bold text-center mt-2">
                         {/* {formError} */}
-                    </p>
+                {/* </p> */}
+                {/* </div> */}
+                <div className="flex">
+                    <input
+                        type="submit"
+                        value="Submit"
+                        onClick={handleSubmit}
+                        className="w-64 mx-auto mt-6 bg-red-600 hover:bg-red-700 text-white font-semibold p-3"
+                    />
                 </div>
-                {/* <div className="mt-2 flex items-center">
-                    <button
-                        className={`px-4 py-1 text-white font-bold tracking-wider ${
-                            formLoading
-                                ? "bg-gray-600 cursor-default"
-                                : "bg-indigo-600 hover:bg-indigo-800"
-                        } rounded`}
-                        type="submit">
-                        Submit
-                    </button>
-                    {formLoading && (
-                        <div className="ml-3 text-gray-700 text-sm">
-                            Uploading images and submitting data...
-                        </div>
-                    )}
-                </div> */}
             </form>
         </div>
     );
