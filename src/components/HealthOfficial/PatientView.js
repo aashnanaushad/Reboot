@@ -104,7 +104,9 @@ export default function PatientView(id) {
                                         <div className="text-sm">
                                             healthofficial
                                         </div>
-                                        <div className="text-xs">09-12-2020</div>
+                                        <div className="text-xs">
+                                            09-12-2020
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -117,8 +119,11 @@ export default function PatientView(id) {
                                 </button>
                             </div>
                             <div>
-                                <button className="inline-flex items-center justify-center whitespace-no-wrap text-sm font-semibold py-2 px-4 bg-red-700 text-white rounded cursor-pointer w-full"
-                                    onClick={() => navigate(`/patient/${id}/consultation`)}>
+                                <button
+                                    className="inline-flex items-center justify-center whitespace-no-wrap text-sm font-semibold py-2 px-4 bg-red-700 text-white rounded cursor-pointer w-full"
+                                    onClick={() =>
+                                        navigate(`/patient/${id}/consultation`)
+                                    }>
                                     <i className="fas fa-plus-square mr-2" />
                                     Add Consultation
                                 </button>
@@ -127,6 +132,80 @@ export default function PatientView(id) {
                     </div>
                 </div>
             </section>
+            <div className="flex flex-col pt-4 ">
+                <div className="font-semibold text-2xl text-red-800 ml-2 p-2 leading-tight m-2 ml-0">
+                    Consultation History
+                </div>
+
+                <div className="border rounded-lg bg-white shadow h-full hover:border-primary-500 text-black mt-4 p-4">
+                    <div className="flex justify-between">
+                        <div className="grid gap-2 grid-cols-1">
+                            <div className="capitalize">
+                                <span className="font-semibold leading-relaxed">
+                                    Decision after Consultation:{" "}
+                                </span>
+                                Home Isolation
+                            </div>
+                            {/* <div>
+                                    <span className="font-semibold leading-relaxed">
+                                        Facility:{" "}
+                                    </span>
+                                    Govt Hospi
+                                </div> */}
+                        </div>
+                    </div>
+                    <div className="grid gap-2 grid-cols-1 md:grid-cols-2 mt-2">
+                        <div className="md:col-span-2">
+                            <span className="font-semibold leading-relaxed">
+                                Category:
+                            </span>
+                            <span className="badge badge-pill badge-warning">
+                                Mild
+                            </span>
+                        </div>
+                        <div>
+                            <span className="font-semibold leading-relaxed">
+                                Updated on:
+                            </span>
+                            Dec 20, 2020
+                        </div>
+                    </div>
+                    <div className="grid gap-2 grid-cols-1 md:grid-cols-2 mt-2">
+                        <div className="capitalize">
+                            <span className="font-semibold leading-relaxed">
+                                Symptoms:{" "}
+                            </span>
+                            Cough, Sneezing, Sore Throat, Fever
+                        </div>
+
+                        <div className="md:col-span-2 capitalize">
+                            <span className="font-semibold leading-relaxed">
+                                prescriptions:{" "}
+                            </span>
+                            Paracetamol
+                        </div>
+
+                        <div className="md:col-span-2 capitalize">
+                            <span className="font-semibold leading-relaxed">
+                                Verified By :{" "}
+                            </span>
+                            <span className="badge badge-pill badge-primary">
+                                Dr. Athul CMA
+                            </span>
+                        </div>
+                        <div>
+                            <button
+                                className="inline-flex w-full items-center justify-center whitespace-no-wrap text-sm font-semibold py-2 px-4 bg-red-700 text-white rounded cursor-pointer w-full"
+                                onClick={() =>
+                                    navigate(`/patient/${id}/consultation`)
+                                }>
+                                <i className="fas fa-plus-square mr-2" />
+                                Update Consultation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

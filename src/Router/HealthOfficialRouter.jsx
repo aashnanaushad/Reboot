@@ -33,7 +33,7 @@ const links = [
 ];
 const HealthOfficialRouter = () => {
     useRedirect("/login", "/profile");
-    useRedirect("/", "/profile");
+    useRedirect("/", "/patients");
     useRedirect("/home", "/profile");
     const pages = useRoutes(routes);
 
