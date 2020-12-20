@@ -14,7 +14,7 @@ function Register() {
         state: "",
         ward: "",
         district: "",
-        localBody: ""
+        localBody: "",
     };
     const [form, setForm] = useState(initForm);
     const handleChange = (e) => {
@@ -44,7 +44,7 @@ function Register() {
                 window.location.reload();
             }
         });
-    }
+    };
     return (
         <div className="leading-loose mx-auto">
             <form className="max-w-xl mx-auto m-4 p-10 bg-white rounded shadow-xl">
@@ -119,13 +119,13 @@ function Register() {
                 <div className="mt-2">
                     <label
                         className="block text-sm text-gray-600"
-                        htmlFor="number">
+                        htmlFor="phoneNumber">
                         Phone Number
                     </label>
                     <input
                         className="form-textarea focus:shadow-outline w-full px-5 py-1 text-gray-700 border border-gray-400  rounded"
-                        id="number"
-                        name="number"
+                        id="phoneNumber"
+                        name="phoneNumber"
                         value={form.phoneNumber}
                         onChange={handleChange}
                         type="text"
