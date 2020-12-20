@@ -65,7 +65,7 @@ function Register() {
                         value={form.userName}
                         onChange={handleChange}
                         type="text"
-                        placeholder="ABCD"
+                        placeholder="Name of User"
                     />
                 </div>
                 <div className="mt-2">
@@ -97,7 +97,7 @@ function Register() {
                         value={form.password}
                         onChange={handleChange}
                         type="password"
-                        placeholder="*****"
+                        placeholder="Password"
                     />
                 </div>
                 <div className="mt-2">
@@ -113,7 +113,7 @@ function Register() {
                         value={form.confirm}
                         onChange={handleChange}
                         type="password"
-                        placeholder="*****"
+                        placeholder="Confirm Password"
                     />
                 </div>
                 <div className="mt-2">
@@ -129,7 +129,7 @@ function Register() {
                         value={form.phoneNumber}
                         onChange={handleChange}
                         type="text"
-                        placeholder="0000000000"
+                        placeholder="Enter Phone Number"
                     />
                 </div>
                 <div className="mt-2">
@@ -145,7 +145,7 @@ function Register() {
                         value={form.ward}
                         onChange={handleChange}
                         type="text"
-                        placeholder="000"
+                        placeholder="Enter Ward Number"
                     />
                 </div>
                 <div className="mt-2">
@@ -161,7 +161,7 @@ function Register() {
                         value={form.localBody}
                         onChange={handleChange}
                         type="text"
-                        placeholder="xyz"
+                        placeholder="Enter localbody"
                     />
                 </div>
                 <div className="mt-2">
@@ -177,7 +177,7 @@ function Register() {
                         value={form.district}
                         onChange={handleChange}
                         type="text"
-                        placeholder="pqr"
+                        placeholder="Enter District"
                     />
                 </div>
                 <div className="mt-2">
@@ -193,7 +193,7 @@ function Register() {
                         value={form.state}
                         onChange={handleChange}
                         type="text"
-                        placeholder="xyz"
+                        placeholder="Enter State"
                     />
                 </div>
                 <div className="flex">
