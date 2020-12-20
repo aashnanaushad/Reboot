@@ -42,6 +42,7 @@ function App() {
     }
 
     if (currentUser && currentUser.data) {
+        console.log(currentUser.data.data.type);
         // console.log("user:", currentUser.data.data.type);
         if (currentUser.data.data.type === USER_TYPES.POLICE.type) {
             return <PoliceRouter />;

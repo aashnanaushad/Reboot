@@ -5,7 +5,7 @@ export default function PatientProfile() {
     return (
         <div>
             <div className="font-bold text-3xl text-red-800 ml-2">
-                User Details
+                Suspect Details
             </div>
             <section className="md:flex mt-4">
                 <div className="md:w-2/3 mx-2">
@@ -37,7 +37,14 @@ export default function PatientProfile() {
                                     9568451265
                                 </div>
                             </div>
-
+                            <div className="sm:col-span-1">
+                                <div className="text-sm py-2  leading-5 font-medium text-gray-500">
+                                    Phone
+                                </div>
+                                <div className="mt-1 text-sm py-2  leading-5 text-gray-900">
+                                    9568451265
+                                </div>
+                            </div>
                             <div className="flex flex-wrap mt-2">
                                 <span className="m-1 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium leading-4 bg-gray-100 text-gray-700">
                                     <i
@@ -82,10 +89,10 @@ export default function PatientProfile() {
                                     </div>
                                     <div className="mt-1 text-sm leading-5 text-gray-900 whitespace-pre">
                                         <div className="text-sm">
-                                            Padmakumar , Facility admin
+                                            Created by
                                         </div>
                                         <div className="text-xs">
-                                            Dec 19, 2020
+                                            time of creation
                                         </div>
                                     </div>
                                 </div>
@@ -95,11 +102,9 @@ export default function PatientProfile() {
                                     </div>
                                     <div className="mt-1 text-sm leading-5 text-gray-900 whitespace-pre">
                                         <div className="text-sm">
-                                            Swaminath K S, Health Official
+                                            edited person
                                         </div>
-                                        <div className="text-xs">
-                                            Dec 20, 2020
-                                        </div>
+                                        <div className="text-xs">time</div>
                                     </div>
                                 </div>
                             </div>
@@ -138,6 +143,14 @@ export default function PatientProfile() {
                                     Govt Hospi
                                 </div> */}
                             </div>
+                            <div className="flex flex-col">
+                                <div className="mt-2">
+                                    <button className="inline-flex items-center justify-center whitespace-no-wrap text-sm font-semibold py-2 px-4 bg-red-700 text-white rounded cursor-pointer w-full">
+                                        <i className="fas fa-pencil-alt mr-2" />
+                                        Add Consultation
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <div className="grid gap-2 grid-cols-1 md:grid-cols-2 mt-2">
                             <div className="md:col-span-2">
@@ -152,7 +165,7 @@ export default function PatientProfile() {
                                 <span className="font-semibold leading-relaxed">
                                     Updated on:
                                 </span>
-                                Dec 20, 2020
+                                20-12-2020
                             </div>
                         </div>
                         <div className="grid gap-2 grid-cols-1 md:grid-cols-2 mt-2">
