@@ -9,8 +9,8 @@ import StateAdminRouter from "./Router/StateAdminRouter";
 import HealthOfficialRouter from "./Router/HealthOfficialRouter";
 import PanchayathAdminRouter from "./Router/PanchayathAdminRouter";
 import PatientRouter from "./Router/PatientRouter";
+import LaboratoryRouter from "./Router/LaboratoryRouter";
 import { useAbortableEffect } from "./util/useAbortableEffect";
-import PoliceRouter from "./Router/PoliceRouter";
 import "./animate.css";
 
 function App() {
@@ -44,11 +44,7 @@ function App() {
     if (currentUser && currentUser.data) {
         console.log(currentUser.data.data.type);
         // console.log("user:", currentUser.data.data.type);
-        if (currentUser.data.data.type === USER_TYPES.POLICE.type) {
-            return <PoliceRouter />;
-        } else if (
-            currentUser.data.data.type === USER_TYPES.DISTRICT_ADMIN.type
-        ) {
+        if (currentUser.data.data.type === USER_TYPES.DISTRICT_ADMIN.type) {
             return <DistrictAdminRouter />;
         } else if (
             currentUser.data.data.type === USER_TYPES.HEALTH_OFFICIAL.type
@@ -62,7 +58,10 @@ function App() {
             return <PanchayathAdminRouter />;
         } else if (currentUser.data.data.type === USER_TYPES.USER.type) {
             return <PatientRouter />;
-        } else {
+        } else if (currentUser.data.data.type === USER_TYPES.LAB.type) {
+            return <LaboratoryRouter />;
+        }
+        else {
             return <PublicRouter />;
         }
     } else {

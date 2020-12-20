@@ -33,6 +33,12 @@ export default {
         method: "POST",
         noAuth: false,
     },
+
+    createLab: {
+        path: "/api/v1/facility/add-laboratory",
+        method: "POST",
+        noAuth: false,
+    },
     getAllFacilities: {
         path: "/api/v1/facility/all-facility",
         method: "GET",

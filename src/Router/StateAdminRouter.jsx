@@ -5,12 +5,14 @@ import CreateFacility from "../components/Admin/CreateFacility.js";
 import Facility from "../components/Admin/Facility";
 import FacilityView from "../components/Admin/FacilityView";
 import FacilityProfile from "../components/Admin/FacilityView";
+import CreateLaboratory from "../components/Admin/CreateLaboratory";
 
 const routes = {
     "/createfacility": () => <CreateFacility />,
     "/facilities": () => <Facility />,
     "/facility/:id": ({ id }) => <FacilityView id={id} />,
     "/facilityprofile": () => <FacilityProfile />,
+    "/createlaboratory": () => <CreateLaboratory />,
 };
 const links = [
     {
@@ -21,6 +23,11 @@ const links = [
     {
         link: "/createfacility",
         title: "Create Facility",
+        icon: "",
+    },
+    {
+        link: "/createlaboratory",
+        title: "Create Laboratory",
         icon: "",
     },
 

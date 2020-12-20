@@ -1,10 +1,12 @@
 import React from "react";
 import { useRoutes, useRedirect } from "hookrouter";
-import PoliceProfile from "../components/Police/PoliceProfile";
+
 import NavBar from "../components/Navbars/NavBar";
+import Profile from "../components/Laboratory/Profile"
 
 const routes = {
-    "/profile": () => <PoliceProfile />
+    "/profile": () => <Profile />,
+
 };
 const links = [
     {
@@ -26,7 +28,6 @@ const DistrictAdminRouter = () => {
             ) : (
                     <NavBar pages={pages} menus={links} />
                 )}
-
         </div>
     );
 };
