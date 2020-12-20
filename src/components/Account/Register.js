@@ -10,7 +10,7 @@ function Register() {
         dob: "",
         password: "",
         confirm: "",
-        number: "",
+        phoneNumber: "",
         state: "",
         ward: "",
         district: "",
@@ -126,7 +126,7 @@ function Register() {
                         className="form-textarea focus:shadow-outline w-full px-5 py-1 text-gray-700 border border-gray-400  rounded"
                         id="number"
                         name="number"
-                        value={form.number}
+                        value={form.phoneNumber}
                         onChange={handleChange}
                         type="text"
                         placeholder="0000000000"
@@ -145,7 +145,7 @@ function Register() {
                         value={form.ward}
                         onChange={handleChange}
                         type="text"
-                        placeholder="abc"
+                        placeholder="000"
                     />
                 </div>
                 <div className="mt-2">

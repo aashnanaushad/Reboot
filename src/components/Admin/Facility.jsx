@@ -23,7 +23,7 @@ export default function Facility() {
                                 Total Facilities
                             </dt>
                             <dd className="mt-4 text-5xl leading-9 font-semibold text-gray-900">
-                                392
+                                3
                             </dd>
                         </dl>
                     </div>
